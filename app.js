@@ -3,37 +3,54 @@ const siteData = {
   slogan: "无意整饬，参差错落间，寻绎丰饶的韵致。",
   releases: [
     {
-      title: "作品资料待补充 01",
-      code: "obs-001 / RELEASE",
-      description: "封面素材已接入。作品名称、发行日期、风格与创作信息将在资料确认后更新。",
-      date: "TBA",
-      style: "obscuRE TRAX",
-      image: "assets/release-01.jpg",
+      title: "Quiddity:2 (Part A)",
+      code: "ALBUM / obscuRE TRAX",
+      description: "Quiddity 系列第二辑 Part A。多样化电子音乐专辑，由模糊框架发行。",
+      date: "未公开",
+      style: "ELECTRONIC / ALBUM",
+      image: "assets/release-quiddity2-a.jpg",
+      url: "https://www.beatarray.cn/label/obscuRETRAX",
     },
     {
-      title: "作品资料待补充 02",
-      code: "obs-002 / RELEASE",
-      description: "紫色拼贴系列封面。后续可补充曲名、制作人员与 Dizzylab 作品链接。",
-      date: "TBA",
-      style: "obscuRE TRAX",
-      image: "assets/release-02.jpg",
+      title: "Quiddity:2 (Part B)",
+      code: "ALBUM / obscuRE TRAX",
+      description: "Quiddity 系列第二辑 Part B。延续对状态、性质与自由意志的声音探索。",
+      date: "未公开",
+      style: "ELECTRONIC / ALBUM",
+      image: "assets/release-quiddity2-b.jpg",
+      url: "https://www.beatarray.cn/label/obscuRETRAX",
     },
     {
-      title: "作品资料待补充 03",
-      code: "obs-003 / RELEASE",
-      description: "粉色拼贴系列封面。具体音乐信息暂不推断，等待正式资料后展示。",
-      date: "TBA",
-      style: "obscuRE TRAX",
-      image: "assets/release-03.jpg",
+      title: "Quiddity",
+      code: "obs-CD03 / ALBUM",
+      description: "模糊框架首张多元音乐概念专辑，在不同风格的参差错落间寻找共同的韵致。",
+      date: "2024.06.25",
+      style: "VARIOUS ELECTRONIC",
+      image: "assets/release-quiddity.webp",
+      url: "https://music.163.com/album?id=287426775",
+    },
+    {
+      title: "Transparent Tape",
+      code: "obs-CD04 / SINGLE",
+      description: "由 DLsr_DD1 创作并以模糊框架名义发行的单曲。",
+      date: "未公开",
+      style: "ELECTRONIC / SINGLE",
+      image: "assets/release-transparent-tape.webp",
+      url: "https://music.163.com/song?id=3360381493",
     },
   ],
   artists: [
-    { name: "DLsr_DD1", role: "主理 / 审核 / 发行管理 / 编曲", tag: "DIRECTOR" },
-    { name: "AXSyeken", role: "副主理 / 美工 / 编曲", tag: "CO-DIRECTOR" },
+    { name: "DLsr_DD1", role: "现任主理 / 发行管理 / 编曲 / 母带", tag: "DIRECTOR", image: "assets/member-dlsr.jpg", url: "https://music.163.com/#/artist?id=56650146" },
+    { name: "A_5621 / AXSyeken", role: "现任副主理 / 美工 / 编曲", tag: "CO-DIRECTOR", image: "assets/member-a5621.jpg", url: "https://music.163.com/#/artist?id=56338957" },
+    { name: "Like The Wind", role: "审核 / 编曲", tag: "A&R", image: "assets/member-like-the-wind.webp", url: "https://music.163.com/#/artist?id=99147049" },
+    { name: "Vyn1x_", role: "审核 / 编曲", tag: "A&R", image: "assets/member-vyn1x.webp" },
   ],
   platforms: [
-    { name: "Dizzylab", url: "https://www.dizzylab.net/d/obs-CD03/" },
-    { name: "Bilibili · @DLsr_DD1" },
+    { name: "Beatarray", url: "https://www.beatarray.cn/label/obscuRETRAX" },
+    { name: "网易云音乐", url: "https://music.163.com/#/artist?id=123493084" },
+    { name: "QQ 音乐", url: "https://y.qq.com/n/ryqq_v2/singer/000oaH3J0lAcOi" },
+    { name: "Bilibili", url: "https://space.bilibili.com/3706976213141809" },
+    { name: "Dizzylab", url: "https://www.dizzylab.net/l/obscuRE%20TRAX/" },
   ],
 };
 
@@ -51,9 +68,9 @@ function renderSiteData() {
         <article class="artist-card reveal">
           <div>
             <div class="artist-topline"><span>0${index + 1}</span><span>${artist.tag}</span></div>
-            <div class="artist-monogram" aria-hidden="true">${artist.name.slice(0, 2)}</div>
+            <div class="artist-portrait"><img src="${artist.image}" alt="${artist.name}" /></div>
           </div>
-          <div><h3>${artist.name}</h3><p>${artist.role}</p></div>
+          <div><h3>${artist.url ? `<a href="${artist.url}" target="_blank" rel="noreferrer">${artist.name} ↗</a>` : artist.name}</h3><p>${artist.role}</p></div>
         </article>`,
     )
     .join("");
@@ -86,6 +103,7 @@ function renderRelease() {
         <span class="release-number">0${currentRelease + 1} / 0${siteData.releases.length}</span>
         <h3>${release.title}</h3>
         <p>${release.description}</p>
+        <a class="release-link" href="${release.url}" target="_blank" rel="noreferrer">播放 / 查看 <span>↗</span></a>
       </div>
       <div class="release-meta">
         <div><span>RELEASE DATE</span>${release.date}</div>
