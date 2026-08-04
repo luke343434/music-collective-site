@@ -190,7 +190,53 @@ function setupRevealAnimations() {
   document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 }
 
+function setupPageDetails() {
+  let ticking = false;
+  const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const updatePageState = () => {
+    const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollRange > 0 ? window.scrollY / scrollRange : 0;
+    document.documentElement.style.setProperty("--scroll-progress", String(progress));
+
+    const marker = window.scrollY + window.innerHeight * 0.34;
+    let activeId = sections[0]?.id;
+    sections.forEach((section) => {
+      if (section.offsetTop <= marker) activeId = section.id;
+    });
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
+    });
+    ticking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updatePageState);
+  }, { passive: true });
+  updatePageState();
+
+  const hero = document.querySelector(".hero");
+  if (!hero || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  hero.addEventListener("pointermove", (event) => {
+    const bounds = hero.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 12;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 10;
+    hero.style.setProperty("--hero-x", `${x}px`);
+    hero.style.setProperty("--hero-y", `${y}px`);
+  });
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--hero-x", "0px");
+    hero.style.setProperty("--hero-y", "0px");
+  });
+}
+
 renderSiteData();
 setupInteractions();
 setupRevealAnimations();
+setupPageDetails();
 document.querySelector("#year").textContent = new Date().getFullYear();
