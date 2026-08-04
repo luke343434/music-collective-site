@@ -1,47 +1,40 @@
-// Replace the placeholder content in this object when the club materials are ready.
 const siteData = {
-  name: "UNTITLED",
-  slogan: "让不同的声音，在同一个坐标相遇。",
-  email: "hello@example.com",
+  name: "obscuRE TRAX",
+  slogan: "无意整饬，参差错落间，寻绎丰饶的韵致。",
   releases: [
     {
-      title: "第一束噪点",
-      code: "UTD-001 / SINGLE",
-      description: "首张占位作品。这里可以放作品的创作背景、声音风格与参与人员介绍。",
-      date: "20XX.XX.XX",
-      style: "ELECTRONIC / POP",
-      colors: ["#ef4c23", "#121411"],
-      radius: "50%",
-      rotate: "18deg",
+      title: "作品资料待补充 01",
+      code: "obs-001 / RELEASE",
+      description: "封面素材已接入。作品名称、发行日期、风格与创作信息将在资料确认后更新。",
+      date: "TBA",
+      style: "obscuRE TRAX",
+      image: "assets/release-01.jpg",
     },
     {
-      title: "凌晨合流",
-      code: "UTD-002 / EP",
-      description: "一张关于城市、夜晚与相遇的占位 EP。正式资料到位后可加入试听链接。",
-      date: "20XX.XX.XX",
-      style: "ROCK / AMBIENT",
-      colors: ["#c9ff3d", "#1732ff"],
-      radius: "4%",
-      rotate: "45deg",
+      title: "作品资料待补充 02",
+      code: "obs-002 / RELEASE",
+      description: "紫色拼贴系列封面。后续可补充曲名、制作人员与 Dizzylab 作品链接。",
+      date: "TBA",
+      style: "obscuRE TRAX",
+      image: "assets/release-02.jpg",
     },
     {
-      title: "无名频率",
-      code: "UTD-003 / COMPILATION",
-      description: "社团合辑占位内容，用于集中呈现多位成员的不同创作方向。",
-      date: "20XX.XX.XX",
-      style: "VARIOUS ARTISTS",
-      colors: ["#1732ff", "#f4f0e6"],
-      radius: "42% 4%",
-      rotate: "-20deg",
+      title: "作品资料待补充 03",
+      code: "obs-003 / RELEASE",
+      description: "粉色拼贴系列封面。具体音乐信息暂不推断，等待正式资料后展示。",
+      date: "TBA",
+      style: "obscuRE TRAX",
+      image: "assets/release-03.jpg",
     },
   ],
   artists: [
-    { name: "MEMBER 01", role: "主唱 / 创作", tag: "VOCAL" },
-    { name: "MEMBER 02", role: "制作 / 编曲", tag: "PRODUCER" },
-    { name: "MEMBER 03", role: "吉他 / 词曲", tag: "GUITAR" },
-    { name: "MEMBER 04", role: "视觉 / 摄影", tag: "VISUAL" },
+    { name: "DLsr_DD1", role: "主理 / 审核 / 发行管理 / 编曲", tag: "DIRECTOR" },
+    { name: "AXSyeken", role: "副主理 / 美工 / 编曲", tag: "CO-DIRECTOR" },
   ],
-  platforms: ["网易云音乐", "QQ 音乐", "Bilibili", "小红书", "抖音", "Spotify", "YouTube"],
+  platforms: [
+    { name: "Dizzylab", url: "https://www.dizzylab.net/d/obs-CD03/" },
+    { name: "Bilibili · @DLsr_DD1" },
+  ],
 };
 
 let currentRelease = 0;
@@ -51,11 +44,6 @@ function renderSiteData() {
     element.textContent = siteData.name;
   });
   document.querySelector("[data-site-slogan]").textContent = siteData.slogan;
-  document.querySelectorAll("[data-contact-email]").forEach((element) => {
-    element.href = `mailto:${siteData.email}`;
-    element.textContent = `${siteData.email} ↗`;
-  });
-
   const artistGrid = document.querySelector("#artist-grid");
   artistGrid.innerHTML = siteData.artists
     .map(
@@ -63,7 +51,7 @@ function renderSiteData() {
         <article class="artist-card reveal">
           <div>
             <div class="artist-topline"><span>0${index + 1}</span><span>${artist.tag}</span></div>
-            <div class="artist-avatar" aria-label="${artist.name} 的头像占位图"></div>
+            <div class="artist-monogram" aria-hidden="true">${artist.name.slice(0, 2)}</div>
           </div>
           <div><h3>${artist.name}</h3><p>${artist.role}</p></div>
         </article>`,
@@ -71,7 +59,9 @@ function renderSiteData() {
     .join("");
 
   document.querySelector("#platform-links").innerHTML = siteData.platforms
-    .map((platform) => `<a href="#" aria-label="${platform}（链接待补充）">${platform} ↗</a>`)
+    .map((platform) => platform.url
+      ? `<a href="${platform.url}" target="_blank" rel="noreferrer">${platform.name} ↗</a>`
+      : `<span>${platform.name}</span>`)
     .join("");
 
   document.querySelector("#slider-dots").innerHTML = siteData.releases
@@ -88,8 +78,8 @@ function renderRelease() {
   const release = siteData.releases[currentRelease];
   const card = document.querySelector("#release-card");
   card.innerHTML = `
-    <div class="release-art" data-code="${release.code}" style="--art-bg:${release.colors[0]};--art-ink:${release.colors[1]};--art-radius:${release.radius};--art-rotate:${release.rotate}">
-      <i aria-hidden="true"></i>
+    <div class="release-art" data-code="${release.code}">
+      <img src="${release.image}" alt="${release.title} 封面" />
     </div>
     <div class="release-info">
       <div>
@@ -150,7 +140,7 @@ function setupInteractions() {
 function updateThemeLabel() {
   const isDark = document.documentElement.dataset.theme === "dark";
   document.querySelector(".theme-label").textContent = isDark ? "日间" : "夜间";
-  document.querySelector("meta[name='theme-color']").content = isDark ? "#11130f" : "#f4f0e6";
+  document.querySelector("meta[name='theme-color']").content = isDark ? "#0d0716" : "#f3efff";
 }
 
 function setupRevealAnimations() {
