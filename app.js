@@ -17,7 +17,7 @@ const siteData = {
       description: "Quiddity 系列第二辑 Part B。延续对状态、性质与自由意志的声音探索。",
       date: "未公开",
       style: "ELECTRONIC / ALBUM",
-      image: "assets/release-quiddity2-b.jpg",
+      image: "assets/release-02.jpg",
       url: "https://www.beatarray.cn/label/obscuRETRAX",
     },
     {
@@ -97,6 +97,12 @@ function renderRelease() {
   card.innerHTML = `
     <div class="release-art" data-code="${release.code}">
       <img src="${release.image}" alt="${release.title} 封面" />
+      <button class="release-image-nav release-image-prev" type="button" data-release-direction="-1" aria-label="上一张作品">
+        <span>←</span><small>PREV</small>
+      </button>
+      <button class="release-image-nav release-image-next" type="button" data-release-direction="1" aria-label="下一张作品">
+        <small>NEXT</small><span>→</span>
+      </button>
     </div>
     <div class="release-info">
       <div>
@@ -130,6 +136,11 @@ function setupInteractions() {
     if (!dot) return;
     currentRelease = Number(dot.dataset.slide);
     renderRelease();
+  });
+  document.querySelector("#release-card").addEventListener("click", (event) => {
+    const control = event.target.closest("[data-release-direction]");
+    if (!control) return;
+    moveSlider(Number(control.dataset.releaseDirection));
   });
 
   const menuButton = document.querySelector(".menu-toggle");
