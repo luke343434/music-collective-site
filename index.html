@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="独立音乐社团官方网站，展示音乐作品、成员、活动与合作信息。"
+    />
+    <meta name="theme-color" content="#f4f0e6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="未命名音乐社团 | Official" />
+    <meta
+      property="og:description"
+      content="独立音乐社团官方网站，展示音乐作品、成员、活动与合作信息。"
+    />
+    <title>未命名音乐社团 | Official</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <a class="wordmark" href="#top" aria-label="返回首页">
+        <span class="wordmark-mark">///</span>
+        <span data-site-name>UNTITLED</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">打开菜单</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主要导航">
+        <a href="#about">关于</a>
+        <a href="#releases">作品</a>
+        <a href="#artists">成员</a>
+        <a href="#activities">活动</a>
+        <a href="#join">加入我们</a>
+        <a href="#contact">联系</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="切换深浅色模式">
+        <span class="theme-icon" aria-hidden="true"></span>
+        <span class="theme-label">夜间</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-shell" id="about">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit" aria-hidden="true"><span></span></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">INDEPENDENT MUSIC COLLECTIVE · EST. 20XX</p>
+          <h1><span>MAKE</span><span>NOISE</span><span>TOGETHER.</span></h1>
+          <p class="hero-lead" data-site-slogan>让不同的声音，在同一个坐标相遇。</p>
+          <p class="hero-intro">
+            这里将放置你们社团的正式介绍。可以讲述成立缘起、音乐方向、共同理念，
+            以及希望与听众建立怎样的连接。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#releases">聆听作品 <span>↗</span></a>
+            <a class="text-link" href="#join">加入社团 <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-meta reveal">
+          <div><span>STATUS</span><strong>ACTIVE / 开放合作</strong></div>
+          <div><span>BASED IN</span><strong>YOUR CITY / ONLINE</strong></div>
+          <div><span>FOCUS</span><strong>ORIGINAL MUSIC</strong></div>
+        </div>
+        <p class="scroll-note" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></p>
+      </section>
+
+      <section class="statement section-shell reveal" aria-label="社团宣言">
+        <p class="section-index">01 / MANIFESTO</p>
+        <blockquote>
+          音乐不是背景。<br />
+          它是我们辨认彼此的<span>信号</span>。
+        </blockquote>
+        <p class="statement-note">
+          这是一段可替换的社团宣言，用一句鲜明的话建立品牌性格。
+        </p>
+      </section>
+
+      <section class="releases section-shell" id="releases">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-index">02 / SELECTED RELEASES</p>
+            <h2>近期作品</h2>
+          </div>
+          <p>单曲、EP、合辑与现场记录。后续可接入各音乐平台链接。</p>
+        </div>
+
+        <div class="release-stage reveal">
+          <button class="slider-button prev" type="button" aria-label="上一张作品">←</button>
+          <div class="release-card" id="release-card" aria-live="polite"></div>
+          <button class="slider-button next" type="button" aria-label="下一张作品">→</button>
+        </div>
+        <div class="slider-footer reveal">
+          <div class="slider-dots" id="slider-dots" aria-label="作品分页"></div>
+          <a class="text-link" href="#contact">查看全部作品 <span>↗</span></a>
+        </div>
+      </section>
+
+      <section class="artists section-shell" id="artists">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-index">03 / THE COLLECTIVE</p>
+            <h2>共同创作的人</h2>
+          </div>
+          <p>这里展示核心成员、合作音乐人及各自负责的方向。</p>
+        </div>
+        <div class="artist-grid" id="artist-grid"></div>
+      </section>
+
+      <section class="activities section-shell" id="activities">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-index">04 / WHAT WE DO</p>
+            <h2>不只发行音乐</h2>
+          </div>
+          <p>根据社团实际情况，可替换为演出、企划、制作或其他活动。</p>
+        </div>
+        <div class="activity-list">
+          <article class="activity reveal">
+            <span>01</span><h3>原创发行</h3>
+            <p>组织单曲、EP 与主题合辑，从创作到上线形成完整计划。</p>
+            <b>RELEASE</b>
+          </article>
+          <article class="activity reveal">
+            <span>02</span><h3>现场演出</h3>
+            <p>参与校园、Livehouse 与独立音乐活动，创造真实的现场连接。</p>
+            <b>LIVE</b>
+          </article>
+          <article class="activity reveal">
+            <span>03</span><h3>联合企划</h3>
+            <p>与音乐人、视觉创作者和其他社团共同发起跨媒介项目。</p>
+            <b>COLLAB</b>
+          </article>
+          <article class="activity reveal">
+            <span>04</span><h3>创作交流</h3>
+            <p>定期分享创作方法、制作技术与行业经验，让想法持续发生。</p>
+            <b>COMMUNITY</b>
+          </article>
+        </div>
+      </section>
+
+      <section class="join section-shell" id="join">
+        <div class="join-panel reveal">
+          <div>
+            <p class="section-index">05 / OPEN CALL</p>
+            <h2>下一段声音，<br />也许来自你。</h2>
+          </div>
+          <div class="join-copy">
+            <p>
+              我们欢迎音乐人、乐手、制作人、视觉设计师与活动伙伴。这里将放置正式的
+              招募要求、投稿格式、审核方式和回复周期。
+            </p>
+            <div class="join-status"><i></i> 当前状态：等待你提供招募信息</div>
+            <a class="button button-light" href="mailto:hello@example.com">发送作品 / 简历 <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-shell" id="contact">
+        <div class="contact-title reveal">
+          <p class="section-index">06 / CONTACT & LINKS</p>
+          <h2>KEEP IN<br /><em>TOUCH.</em></h2>
+        </div>
+        <div class="contact-details reveal">
+          <p>演出邀请、联合企划、品牌合作或其他事项，请通过以下方式联系我们。</p>
+          <a class="contact-email" data-contact-email href="mailto:hello@example.com">hello@example.com ↗</a>
+          <div class="platform-links" id="platform-links"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#top"><span class="wordmark-mark">///</span><span data-site-name>UNTITLED</span></a>
+      <p>© <span id="year"></span> <span data-site-name>UNTITLED</span> MUSIC COLLECTIVE.</p>
+      <a href="#top">BACK TO TOP ↑</a>
+    </footer>
+  </body>
+</html>
