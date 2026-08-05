@@ -92,7 +92,7 @@ const translations = {
       market: { title: "计划参加电侧市场", description: "即将开展的线下活动，信息来自 Beatarray 厂牌发展历程。" },
       archive: { status: "历史征稿 · 已于 2026.05.30 截止", description: "主题为“自由意志”。收录方向为 1–10 分钟电子音乐原创作品，曲名需为以 <b>-ity</b> 结尾、表达性质或状态的单词；亦接受对过往 Quiddity 曲目的 Remix。初审使用 MP3，通过后提交 WAV 24bit / 48kHz 成品。" },
     },
-    visual: { title: "混沌的<br /><em>褶皱。</em>", description: "以平面设计记录厂牌的视觉切片：网格、故障、城市、噪点与紫色光谱。", imageOne: "obscuRE TRAX 紫色故障视觉设计", imageTwo: "城市与玫瑰主题平面设计" },
+    visual: { title: "混沌的<br /><em>褶皱。</em>", description: "以平面设计记录厂牌的视觉切片：网格、故障、城市、噪点与紫色光谱。", hint: "悬停探索 · 双击放大查看", aria: "视觉档案图片网络", dialogAria: "视觉档案大图查看器", close: "关闭大图", closeHint: "双击背景或按 Esc 关闭", imageAlt: "视觉档案作品 {number}" },
     contact: { title: "保持<br /><em>联系。</em>", description: "发行咨询、投稿、商务合作与其他厂牌事务，请通过邮箱、Beatarray 或以下平台联系。", directorQQ: "主理人 QQ", deputyQQ: "副主理 QQ", note: "中国湖南省长沙市 · 商务合作请注明来意，预计 2 个工作日内回复。", submit: "Beatarray 在线投稿" },
     platforms: { netease: "网易云音乐", qqMusic: "QQ 音乐" },
     footer: { identity: "独立厂牌。", back: "返回顶部 ↑" },
@@ -128,7 +128,7 @@ const translations = {
       market: { title: "Electronic-Side Market Planned", description: "An upcoming offline event listed in the Beatarray label timeline." },
       archive: { status: "ARCHIVED OPEN CALL · CLOSED 2026.05.30", description: "Theme: “Free Will.” The call accepted original electronic works between 1 and 10 minutes. Titles had to end in <b>-ity</b> and express a quality or state; remixes of past Quiddity tracks were also accepted. MP3 files were used for initial review, followed by 24-bit / 48 kHz WAV masters after acceptance." },
     },
-    visual: { title: "FOLDS OF<br /><em>CHAOS.</em>", description: "Visual fragments of the label recorded through grids, glitches, cities, noise, and a violet spectrum.", imageOne: "Purple glitch artwork for obscuRE TRAX", imageTwo: "City and rose graphic artwork" },
+    visual: { title: "FOLDS OF<br /><em>CHAOS.</em>", description: "Visual fragments of the label recorded through grids, glitches, cities, noise, and a violet spectrum.", hint: "Hover to explore · Double-click to enlarge", aria: "Visual archive image network", dialogAria: "Visual archive image viewer", close: "Close image", closeHint: "Double-click the backdrop or press Esc to close", imageAlt: "Visual archive artwork {number}" },
     contact: { title: "KEEP IN<br /><em>TOUCH.</em>", description: "For release inquiries, submissions, business collaboration, and other label matters, contact us by email, Beatarray, or the platforms below.", directorQQ: "Director QQ", deputyQQ: "Co-Director QQ", note: "Changsha, Hunan, China · State your purpose for business inquiries; we aim to reply within two working days.", submit: "Submit via Beatarray" },
     platforms: { netease: "NetEase Cloud Music", qqMusic: "QQ Music" },
     footer: { identity: "INDEPENDENT LABEL.", back: "BACK TO TOP ↑" },
@@ -164,7 +164,7 @@ const translations = {
       market: { title: "電側市場への参加予定", description: "Beatarray のレーベル沿革に掲載された今後のオフライン活動。" },
       archive: { status: "過去の公募 · 2026.05.30 締切", description: "テーマは「自由意志」。1〜10分のオリジナル電子音楽を募集し、曲名は性質や状態を表す <b>-ity</b> で終わる単語としました。過去の Quiddity 収録曲の Remix も対象。一次審査は MP3、採用後は WAV 24bit / 48kHz の完成版を提出。" },
     },
-    visual: { title: "混沌の<br /><em>襞。</em>", description: "グリッド、グリッチ、都市、ノイズ、紫のスペクトルによってレーベルの視覚断片を記録します。", imageOne: "obscuRE TRAX の紫色グリッチアート", imageTwo: "都市と薔薇をテーマにしたグラフィック" },
+    visual: { title: "混沌の<br /><em>襞。</em>", description: "グリッド、グリッチ、都市、ノイズ、紫のスペクトルによってレーベルの視覚断片を記録します。", hint: "ホバーで探索 · ダブルクリックで拡大", aria: "ビジュアルアーカイブ画像ネットワーク", dialogAria: "ビジュアルアーカイブ画像ビューア", close: "画像を閉じる", closeHint: "背景をダブルクリック、または Esc で閉じる", imageAlt: "ビジュアルアーカイブ作品 {number}" },
     contact: { title: "つながりを<br /><em>保つ。</em>", description: "リリース、投稿、ビジネス協業などのお問い合わせは、メール、Beatarray、または以下のプラットフォームからご連絡ください。", directorQQ: "主宰 QQ", deputyQQ: "副主宰 QQ", note: "中国・湖南省長沙市 · ビジネスのお問い合わせには目的をご記載ください。2営業日以内の返信を予定しています。", submit: "Beatarray から投稿" },
     platforms: { netease: "NetEase Cloud Music", qqMusic: "QQ Music" },
     footer: { identity: "インディペンデントレーベル。", back: "ページ上部へ ↑" },
@@ -299,6 +299,9 @@ function applyLanguage(language) {
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
     element.alt = t(element.dataset.i18nAlt);
   });
+  document.querySelectorAll("[data-visual-index] img").forEach((image, index) => {
+    image.alt = t("visual.imageAlt", { number: String(index + 1).padStart(2, "0") });
+  });
   document.querySelector(".language-select").value = currentLanguage;
   renderSiteData();
   updateThemeLabel();
@@ -409,6 +412,72 @@ function setupActivityHover() {
   list.addEventListener("pointercancel", () => setActiveActivity(null));
 }
 
+function setupVisualArchive() {
+  const network = document.querySelector("#visual-network");
+  const lightbox = document.querySelector("#visual-lightbox");
+  if (!network || !lightbox) return;
+
+  const connectors = network.querySelector(".visual-connectors");
+  const core = network.querySelector(".visual-core");
+  const nodes = [...network.querySelectorAll(".visual-node")];
+  const lightboxImage = lightbox.querySelector("img");
+  const lightboxIndex = lightbox.querySelector("#visual-lightbox-index");
+  const closeButton = lightbox.querySelector(".visual-lightbox-close");
+  let drawFrame = 0;
+
+  const drawConnectors = () => {
+    cancelAnimationFrame(drawFrame);
+    drawFrame = requestAnimationFrame(() => {
+      const networkBounds = network.getBoundingClientRect();
+      const coreBounds = core.getBoundingClientRect();
+      const centerX = coreBounds.left - networkBounds.left + coreBounds.width / 2;
+      const centerY = coreBounds.top - networkBounds.top + coreBounds.height / 2;
+
+      connectors.setAttribute("viewBox", `0 0 ${networkBounds.width} ${networkBounds.height}`);
+      connectors.replaceChildren(...nodes.map((node) => {
+        const bounds = node.getBoundingClientRect();
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", centerX);
+        line.setAttribute("y1", centerY);
+        line.setAttribute("x2", bounds.left - networkBounds.left + bounds.width / 2);
+        line.setAttribute("y2", bounds.top - networkBounds.top + bounds.height / 2);
+        return line;
+      }));
+    });
+  };
+
+  const openLightbox = (node) => {
+    const image = node.querySelector("img");
+    const index = Number(node.dataset.visualIndex);
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    lightboxIndex.textContent = `${String(index + 1).padStart(2, "0")} / ${String(nodes.length).padStart(2, "0")}`;
+    lightbox.showModal();
+  };
+
+  nodes.forEach((node) => {
+    node.addEventListener("dblclick", () => openLightbox(node));
+    node.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openLightbox(node);
+    });
+  });
+  closeButton.addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("dblclick", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("close", () => {
+    lightboxImage.removeAttribute("src");
+  });
+
+  const resizeObserver = new ResizeObserver(drawConnectors);
+  resizeObserver.observe(network);
+  nodes.forEach((node) => resizeObserver.observe(node));
+  window.addEventListener("load", drawConnectors, { once: true });
+  drawConnectors();
+}
+
 function setupPageDetails() {
   let ticking = false;
   const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
@@ -458,5 +527,6 @@ setupInteractions();
 applyLanguage(currentLanguage);
 setupRevealAnimations();
 setupActivityHover();
+setupVisualArchive();
 setupPageDetails();
 document.querySelector("#year").textContent = new Date().getFullYear();
