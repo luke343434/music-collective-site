@@ -181,6 +181,17 @@ function setupInteractions() {
     menuButton.setAttribute("aria-expanded", "false");
   });
 
+  document.querySelectorAll("a[href='#top']").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      });
+      history.replaceState(null, "", `${window.location.pathname}${window.location.search}#top`);
+    });
+  });
+
   const themeButton = document.querySelector(".theme-toggle");
   const savedTheme = localStorage.getItem("site-theme");
   if (savedTheme) document.documentElement.dataset.theme = savedTheme;
