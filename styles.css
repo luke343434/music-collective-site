@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --paper: #f3efff;
@@ -10,9 +10,10 @@
   --acid: #d8ff38;
   --panel: rgba(255, 255, 255, 0.36);
   --header: rgba(243, 239, 255, 0.86);
-  --display: "Archivo Black", "Noto Sans SC", sans-serif;
-  --body: "Noto Sans SC", sans-serif;
-  --mono: "DM Mono", monospace;
+  --font-sans: "Noto Sans SC", "Microsoft YaHei UI", sans-serif;
+  --display: var(--font-sans);
+  --body: var(--font-sans);
+  --mono: var(--font-sans);
 }
 
 html[data-theme="dark"] {
@@ -24,7 +25,9 @@ html[data-theme="dark"] {
   --panel: rgba(255, 255, 255, 0.04);
   --header: rgba(13, 7, 22, 0.88);
 }
-html[lang="ja"] { --body: "Noto Sans JP", sans-serif; }
+html[lang="ja"] {
+  --font-sans: "Noto Sans JP", "Yu Gothic UI", sans-serif;
+}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -33,6 +36,9 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   transition: background 300ms ease, color 300ms ease;
 }
 body::before { content: ""; position: fixed; z-index: -1; width: 38vw; height: 38vw; left: -18vw; top: 42vh; border-radius: 50%; background: var(--accent); opacity: .035; filter: blur(70px); animation: ambient-drift 16s ease-in-out infinite alternate; pointer-events: none; }
@@ -79,6 +85,10 @@ button { color: inherit; font: inherit; }
 .hero::after { content: var(--frame-label, "FRAME / NO UNIFORMITY / 2024"); position: absolute; right: -126px; bottom: 230px; transform: rotate(90deg); color: var(--accent); font: 500 10px var(--mono); letter-spacing: .35em; }
 .hero-copy { position: relative; z-index: 1; align-self: center; }
 .eyebrow, .section-index { margin: 0 0 24px; font: 500 11px var(--mono); letter-spacing: 0.18em; }
+html[data-language="zh"] .eyebrow,
+html[data-language="zh"] .section-index,
+html[data-language="ja"] .eyebrow,
+html[data-language="ja"] .section-index { letter-spacing: 0.06em; }
 .hero h1 { margin: 0; max-width: 970px; font: 400 clamp(62px, 10.2vw, 158px)/0.78 var(--display); letter-spacing: -0.075em; }
 .hero h1 span { display: block; }
 .hero h1 span:nth-child(2) { color: var(--accent); margin-left: 7vw; }
