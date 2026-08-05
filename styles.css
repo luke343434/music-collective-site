@@ -185,12 +185,12 @@ html[data-theme="dark"] .hero-logo { mix-blend-mode: screen; opacity: .28; }
 
 .activity-list { border-top: 1px solid var(--line); }
 .activity { min-height: 150px; display: grid; grid-template-columns: 80px 1fr 1.4fr 130px; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); transition: background 220ms ease, color 220ms ease; }
-.activity:hover { background: var(--ink); color: var(--paper); }
+.activity.is-hovered { background: var(--ink); color: var(--paper); }
 .activity span { font: 400 11px var(--mono); }
 .activity h3 { font-size: 26px; margin: 0; }
 .activity p { color: var(--muted); font-size: 13px; line-height: 1.8; }
 .activity b { text-align: right; font: 500 11px var(--mono); letter-spacing: 0.1em; }
-.activity:hover b { color: var(--acid); transform: translateX(-5px); }
+.activity.is-hovered b { color: var(--acid); transform: translateX(-5px); }
 .activity b { transition: color 220ms ease, transform 220ms ease; }
 
 .history { padding: 130px 0; border-top: 1px solid var(--line); }

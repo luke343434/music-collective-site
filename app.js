@@ -381,6 +381,34 @@ function setupRevealAnimations() {
   document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 }
 
+function setupActivityHover() {
+  const list = document.querySelector(".activity-list");
+  if (!list || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  const activities = [...list.querySelectorAll(".activity")];
+  const edgeGuard = 12;
+  let activeActivity = null;
+
+  const setActiveActivity = (activity) => {
+    if (activity === activeActivity) return;
+    activeActivity?.classList.remove("is-hovered");
+    activeActivity = activity;
+    activeActivity?.classList.add("is-hovered");
+  };
+
+  list.addEventListener("pointermove", (event) => {
+    const nextActivity = activities.find((activity) => {
+      const bounds = activity.getBoundingClientRect();
+      return event.clientY >= bounds.top + edgeGuard && event.clientY <= bounds.bottom - edgeGuard;
+    });
+
+    // Keep the current row active inside the shared edge buffer to prevent flicker.
+    if (nextActivity) setActiveActivity(nextActivity);
+  });
+  list.addEventListener("pointerleave", () => setActiveActivity(null));
+  list.addEventListener("pointercancel", () => setActiveActivity(null));
+}
+
 function setupPageDetails() {
   let ticking = false;
   const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
@@ -429,5 +457,6 @@ function setupPageDetails() {
 setupInteractions();
 applyLanguage(currentLanguage);
 setupRevealAnimations();
+setupActivityHover();
 setupPageDetails();
 document.querySelector("#year").textContent = new Date().getFullYear();
