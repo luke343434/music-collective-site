@@ -46,10 +46,10 @@ const siteData = {
     { name: "Vyn1x_", role: "审核 / 编曲", tag: "A&R", image: "assets/member-vyn1x.webp" },
   ],
   collaboratorRows: [
-    ["ARTIST_01", "ARTIST_02", "ARTIST_03", "ARTIST_04", "ARTIST_05", "ARTIST_06", "ARTIST_07", "ARTIST_08"],
-    ["ARTIST_09", "ARTIST_10", "ARTIST_11", "ARTIST_12", "ARTIST_13", "ARTIST_14", "ARTIST_15", "ARTIST_16"],
-    ["ARTIST_17", "ARTIST_18", "ARTIST_19", "ARTIST_20", "ARTIST_21", "ARTIST_22", "ARTIST_23", "ARTIST_24"],
-    ["ARTIST_25", "ARTIST_26", "ARTIST_27", "ARTIST_28", "ARTIST_29", "ARTIST_30", "ARTIST_31", "ARTIST_32"],
+    ["C0okieB0x", "tRee", "DLsr_DD1", "V-Soul", "SHIBUYA RYUTSU 428", "A_5621"],
+    ["Like The Wind", "Vyn1x_", "ViroNeX", "祈枫_イタラネ", "R41NSHOWER", "Jeanne d'Arc"],
+    ["333xd", "Xpinger", "Ray Snow Ja", "V1nwry_", "LelouchSound", "kaokao"],
+    ["ZA.", "lrrise", "L_light", "Asterbit", "Irotas"],
   ],
   platforms: [
     { name: "Beatarray", url: "https://www.beatarray.cn/label/obscuRETRAX" },
@@ -85,9 +85,13 @@ function renderSiteData() {
   const collaboratorDurations = [54, 50, 56, 48];
   collaboratorMarquee.innerHTML = siteData.collaboratorRows
     .map((row, rowIndex) => {
-      const group = row
+      const names = row
         .map((name) => `<span class="collaborator-pill">${name}</span>`)
         .join("");
+      const fillers = row
+        .map((name) => `<span class="collaborator-pill" aria-hidden="true">${name}</span>`)
+        .join("");
+      const group = `${names}${fillers}`;
       return `
         <div class="collaborator-row" style="--duration:${collaboratorDurations[rowIndex]}s">
           <div class="collaborator-track">
