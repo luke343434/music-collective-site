@@ -45,6 +45,12 @@ const siteData = {
     { name: "Like The Wind", role: "审核 / 编曲", tag: "A&R", image: "assets/member-like-the-wind.webp", url: "https://music.163.com/#/artist?id=99147049" },
     { name: "Vyn1x_", role: "审核 / 编曲", tag: "A&R", image: "assets/member-vyn1x.webp" },
   ],
+  collaboratorRows: [
+    ["ARTIST_01", "ARTIST_02", "ARTIST_03", "ARTIST_04", "ARTIST_05", "ARTIST_06", "ARTIST_07", "ARTIST_08"],
+    ["ARTIST_09", "ARTIST_10", "ARTIST_11", "ARTIST_12", "ARTIST_13", "ARTIST_14", "ARTIST_15", "ARTIST_16"],
+    ["ARTIST_17", "ARTIST_18", "ARTIST_19", "ARTIST_20", "ARTIST_21", "ARTIST_22", "ARTIST_23", "ARTIST_24"],
+    ["ARTIST_25", "ARTIST_26", "ARTIST_27", "ARTIST_28", "ARTIST_29", "ARTIST_30", "ARTIST_31", "ARTIST_32"],
+  ],
   platforms: [
     { name: "Beatarray", url: "https://www.beatarray.cn/label/obscuRETRAX" },
     { name: "网易云音乐", url: "https://music.163.com/#/artist?id=123493084" },
@@ -73,6 +79,23 @@ function renderSiteData() {
           <div><h3>${artist.url ? `<a href="${artist.url}" target="_blank" rel="noreferrer">${artist.name} ↗</a>` : artist.name}</h3><p>${artist.role}</p></div>
         </article>`,
     )
+    .join("");
+
+  const collaboratorMarquee = document.querySelector("#collaborator-marquee");
+  const collaboratorDurations = [54, 50, 56, 48];
+  collaboratorMarquee.innerHTML = siteData.collaboratorRows
+    .map((row, rowIndex) => {
+      const group = row
+        .map((name) => `<span class="collaborator-pill">${name}</span>`)
+        .join("");
+      return `
+        <div class="collaborator-row" style="--duration:${collaboratorDurations[rowIndex]}s">
+          <div class="collaborator-track">
+            <div class="collaborator-group">${group}</div>
+            <div class="collaborator-group" aria-hidden="true">${group}</div>
+          </div>
+        </div>`;
+    })
     .join("");
 
   document.querySelector("#platform-links").innerHTML = siteData.platforms
