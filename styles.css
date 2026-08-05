@@ -184,8 +184,8 @@ html[data-theme="dark"] .hero-logo { mix-blend-mode: screen; opacity: .28; }
 .artist-card:hover p { color: #35382f; }
 
 .activity-list { border-top: 1px solid var(--line); }
-.activity { min-height: 150px; display: grid; grid-template-columns: 80px 1fr 1.4fr 130px; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); transition: padding 220ms ease, background 220ms ease; }
-.activity:hover { padding: 0 24px; background: var(--ink); color: var(--paper); }
+.activity { min-height: 150px; display: grid; grid-template-columns: 80px 1fr 1.4fr 130px; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); transition: background 220ms ease, color 220ms ease; }
+.activity:hover { background: var(--ink); color: var(--paper); }
 .activity span { font: 400 11px var(--mono); }
 .activity h3 { font-size: 26px; margin: 0; }
 .activity p { color: var(--muted); font-size: 13px; line-height: 1.8; }
