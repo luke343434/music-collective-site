@@ -211,21 +211,20 @@ html[data-theme="dark"] .hero-logo { mix-blend-mode: screen; opacity: .28; }
 .visual { padding: 70px 0 150px; }
 .visual-copy { display: grid; grid-template-columns: 1fr minmax(280px, .55fr); gap: 70px; align-items: end; margin-bottom: 58px; }
 .visual-copy h2 { margin: 0; font: 400 clamp(62px, 8vw, 120px)/.83 var(--display); letter-spacing: -.08em; }
+html[data-language="zh"] .visual-copy h2 { line-height: 1.58; letter-spacing: -.06em; }
 .visual-copy h2 em { color: var(--accent); font-style: normal; }
 .visual-intro { align-self: end; padding-bottom: 5px; }
 .visual-intro > p:first-child { max-width: 430px; margin: 0; color: var(--muted); line-height: 1.8; }
 .visual-hint { margin: 22px 0 0; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
 .visual-network { --network-ink: var(--ink); --network-paper: var(--paper); position: relative; min-height: 930px; overflow: hidden; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper-deep) 48%, var(--paper)); isolation: isolate; }
 .visual-network::before { content: ""; position: absolute; inset: 0; z-index: -2; opacity: .55; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(circle at center, black 0 42%, transparent 84%); }
-.visual-network::after { content: "VISUAL / NETWORK / 12"; position: absolute; right: 18px; bottom: 15px; z-index: 4; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
+.visual-network::after { content: "VISUAL / NETWORK"; position: absolute; right: 18px; bottom: 15px; z-index: 4; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
 .visual-connectors { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .visual-connectors line { stroke: var(--network-ink); stroke-width: 1.25; vector-effect: non-scaling-stroke; opacity: .88; }
 .visual-core { position: absolute; z-index: 2; left: 50%; top: 50%; width: 96px; height: 96px; display: grid; place-content: center; border: 2px solid var(--network-ink); border-radius: 50%; color: var(--network-paper); background: var(--network-ink); box-shadow: 0 0 0 10px var(--network-paper), 0 0 0 11px var(--network-ink); transform: translate(-50%, -50%); }
 .visual-core span { color: var(--accent); font-size: 13px; letter-spacing: -.16em; }
-.visual-core strong { margin-top: 3px; font-size: 21px; line-height: 1; }
 .visual-node { position: absolute; z-index: 1; left: var(--x); top: var(--y); width: var(--w); aspect-ratio: var(--ar); border: 2px solid var(--network-ink); padding: 0; background: var(--network-paper); box-shadow: 7px 7px 0 color-mix(in srgb, var(--network-ink) 18%, transparent); cursor: zoom-in; transform: translate(-50%, -50%) rotate(var(--r)); transition: z-index 0s 220ms, transform 260ms cubic-bezier(.2,.7,.2,1), box-shadow 260ms ease, filter 260ms ease; }
 .visual-node img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.visual-node span { position: absolute; right: -2px; bottom: -2px; padding: 5px 8px; color: var(--network-paper); background: var(--network-ink); font-size: 9px; font-weight: 700; letter-spacing: .1em; }
 .visual-node:hover, .visual-node:focus-visible { z-index: 5; outline: 0; filter: saturate(1.08); box-shadow: 12px 12px 0 color-mix(in srgb, var(--accent) 55%, transparent); transform: translate(-50%, -50%) rotate(var(--r)) scale(1.075); transition-delay: 0s; }
 .visual-node:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .visual-lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; margin: 0; border: 0; padding: 0; color: #fff; background: rgba(7, 4, 12, .94); overflow: hidden; }
@@ -251,6 +250,7 @@ html[data-theme="dark"] .hero-logo { mix-blend-mode: screen; opacity: .28; }
 
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; border-top: 1px solid var(--line); }
 .contact-title h2 { margin: 0; font: 400 clamp(68px, 10vw, 150px)/0.78 var(--display); letter-spacing: -0.08em; }
+html[data-language="zh"] .contact-title h2 { line-height: 1.58; letter-spacing: -.06em; }
 .contact-title em { color: var(--accent); font-style: normal; }
 .contact-details { align-self: end; }
 .contact-details > p { color: var(--muted); max-width: 520px; line-height: 1.8; }
