@@ -21,6 +21,8 @@ python -m http.server 4173
 - 输出目录：`.`
 - Node.js：不需要
 
+每次修改 `app.js` 或 `styles.css`，发布前同步更新 `index.html` 中对应资源的 `?v=` 版本号，避免浏览器沿用旧缓存。部署完成后，按公网 HTML 实际引用的资源 URL 核对内容，并附上公网地址：https://luke343434.github.io/music-collective-site/ 。
+
 ## 内容维护
 
 作品、成员和平台信息集中维护在 `app.js` 顶部的 `siteData`：
