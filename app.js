@@ -3,22 +3,24 @@ const siteData = {
   slogan: "无意整饬，参差错落间，寻绎丰饶的韵致。",
   releases: [
     {
-      title: "Quiddity:2 (Part A)",
-      codeKey: "releaseData.codeAlbum",
+      title: "Quiddity:2「PART A」",
+      codeKey: "releaseData.codePartA",
       descriptionKey: "releaseData.partA",
-      dateKey: "releaseData.unpublished",
-      styleKey: "releaseData.styleAlbum",
+      date: "2026.08.21",
+      style: "Trance / House / Dubstep / Artcore",
       image: "assets/release-quiddity2-a.jpg",
-      url: "https://www.beatarray.cn/label/obscuRETRAX",
+      url: "https://music.163.com/album?id=393763480",
+      linkKey: "releases.listenNetease",
     },
     {
-      title: "Quiddity:2 (Part B)",
-      codeKey: "releaseData.codeAlbum",
+      title: "Quiddity:2「PART B」",
+      codeKey: "releaseData.codePartB",
       descriptionKey: "releaseData.partB",
-      dateKey: "releaseData.unpublished",
-      styleKey: "releaseData.styleAlbum",
+      date: "2026.08.21",
+      style: "Hardcore / Hardstyle / Frenchcore / Gabba",
       image: "assets/release-02.jpg",
-      url: "https://www.beatarray.cn/label/obscuRETRAX",
+      url: "https://music.163.com/album?id=393903766",
+      linkKey: "releases.listenNetease",
     },
     {
       title: "Quiddity",
@@ -73,8 +75,8 @@ const translations = {
       listen: "聆听作品", submit: "在线投稿", founded: "成立时间", dizzylabSince: "入驻 Dizzylab", identity: "定位", identityValue: "线上 · 电子音乐", scroll: "向下探索", frame: "框架 / 拒绝统一 / 2024",
     },
     manifesto: { aria: "厂牌宣言", quote: "无意整饬，参差错落间，<br />寻绎丰饶的<span>韵致</span>。", note: "拒斥限制，混沌褶皱处，开凿意义的富矿。" },
-    releases: { title: "近期作品", description: "从概念专辑 Quiddity 到系列续作与单曲，呈现不被单一风格规训的电子音乐。", previous: "上一张作品", next: "下一张作品", previousShort: "上一张", nextShort: "下一张", pagination: "作品分页", beatarray: "Beatarray 厂牌页", slide: "切换到第 {number} 张作品", cover: "{title} 封面", play: "播放 / 查看", date: "发行日期", style: "风格" },
-    releaseData: { partA: "Quiddity 系列第二辑 Part A。多样化电子音乐专辑，由模糊框架发行。", partB: "Quiddity 系列第二辑 Part B。延续对状态、性质与自由意志的声音探索。", quiddity: "模糊框架首张多元音乐概念专辑，在不同风格的参差错落间寻找共同的韵致。", transparentTape: "由 DLsr_DD1 创作并以模糊框架名义发行的单曲。", unpublished: "未公开", codeAlbum: "专辑 / obscuRE TRAX", codeQuiddity: "obs-CD03 / 专辑", codeSingle: "obs-CD04 / 单曲", styleAlbum: "电子音乐 / 专辑", styleVarious: "多元电子音乐", styleSingle: "电子音乐 / 单曲" },
+    releases: { title: "近期作品", description: "从概念专辑 Quiddity 到系列续作与单曲，呈现不被单一风格规训的电子音乐。", previous: "上一张作品", next: "下一张作品", previousShort: "上一张", nextShort: "下一张", pagination: "作品分页", beatarray: "Beatarray 厂牌页", slide: "切换到第 {number} 张作品", cover: "{title} 封面", play: "播放 / 查看", listenNetease: "在网易云音乐收听", date: "发行日期", style: "风格" },
+    releaseData: { partA: "Quiddity 系列第二辑 A 侧，收录 11 首作品，穿行于 Trance、House、Dubstep 与 Artcore 等多元电子风格。由模糊框架发行，现已上线网易云音乐。", partB: "Quiddity 系列第二辑 B 侧，收录 12 首作品，涵盖 Hardcore、Hardstyle、Frenchcore 与 Gabba 等风格。由模糊框架发行，现已上线网易云音乐。", codePartA: "obs-CD06A / 专辑", codePartB: "obs-CD06B / 专辑", quiddity: "模糊框架首张多元音乐概念专辑，在不同风格的参差错落间寻找共同的韵致。", transparentTape: "由 DLsr_DD1 创作并以模糊框架名义发行的单曲。", unpublished: "未公开", codeAlbum: "专辑 / obscuRE TRAX", codeQuiddity: "obs-CD03 / 专辑", codeSingle: "obs-CD04 / 单曲", styleAlbum: "电子音乐 / 专辑", styleVarious: "多元电子音乐", styleSingle: "电子音乐 / 单曲" },
     collaborators: { title: "合作艺人", description: "与模糊框架共同创作、发行与构建声音的音乐人。", aria: "合作艺人名单" },
     artists: { title: "厂牌运营", description: "负责模糊框架审核、发行、母带、编曲与视觉工作的现任运营团队。" },
     roles: { director: "现任主理 / 发行管理 / 编曲 / 母带", deputy: "现任副主理 / 美工 / 编曲", ar: "审核 / 编曲", directorTag: "主理", deputyTag: "副主理", arTag: "审核" },
@@ -109,8 +111,8 @@ const translations = {
       listen: "Listen", submit: "Submit Online", founded: "FOUNDED", dizzylabSince: "DIZZYLAB SINCE", identity: "IDENTITY", identityValue: "ONLINE · ELECTRONIC", scroll: "SCROLL TO EXPLORE", frame: "FRAME / NO UNIFORMITY / 2024",
     },
     manifesto: { aria: "Label manifesto", quote: "We impose no uniform order.<br />In irregularity, we seek a richer <span>resonance</span>.", note: "Reject limits. Mine meaning from the folds of chaos." },
-    releases: { title: "Recent Releases", description: "From the concept album Quiddity to its sequels and singles, electronic music free from a single stylistic discipline.", previous: "Previous release", next: "Next release", previousShort: "PREV", nextShort: "NEXT", pagination: "Release pagination", beatarray: "Beatarray Label Page", slide: "Go to release {number}", cover: "Cover of {title}", play: "Listen / View", date: "RELEASE DATE", style: "STYLE" },
-    releaseData: { partA: "Part A of the second Quiddity volume, a diverse electronic album released by obscuRE TRAX.", partB: "Part B of the second Quiddity volume, continuing an exploration of states, qualities, and free will through sound.", quiddity: "The label's first multi-genre concept album, finding shared resonance among divergent styles.", transparentTape: "A single created by DLsr_DD1 and released through obscuRE TRAX.", unpublished: "NOT DISCLOSED", codeAlbum: "ALBUM / obscuRE TRAX", codeQuiddity: "obs-CD03 / ALBUM", codeSingle: "obs-CD04 / SINGLE", styleAlbum: "ELECTRONIC / ALBUM", styleVarious: "VARIOUS ELECTRONIC", styleSingle: "ELECTRONIC / SINGLE" },
+    releases: { title: "Recent Releases", description: "From the concept album Quiddity to its sequels and singles, electronic music free from a single stylistic discipline.", previous: "Previous release", next: "Next release", previousShort: "PREV", nextShort: "NEXT", pagination: "Release pagination", beatarray: "Beatarray Label Page", slide: "Go to release {number}", cover: "Cover of {title}", play: "Listen / View", listenNetease: "Listen on NetEase Music", date: "RELEASE DATE", style: "STYLE" },
+    releaseData: { partA: "Part A of the second Quiddity volume brings together 11 tracks spanning Trance, House, Dubstep, Artcore, and more. Released by obscuRE TRAX, now on NetEase Music.", partB: "Part B of the second Quiddity volume brings together 12 tracks spanning Hardcore, Hardstyle, Frenchcore, Gabba, and more. Released by obscuRE TRAX, now on NetEase Music.", codePartA: "obs-CD06A / ALBUM", codePartB: "obs-CD06B / ALBUM", quiddity: "The label's first multi-genre concept album, finding shared resonance among divergent styles.", transparentTape: "A single created by DLsr_DD1 and released through obscuRE TRAX.", unpublished: "NOT DISCLOSED", codeAlbum: "ALBUM / obscuRE TRAX", codeQuiddity: "obs-CD03 / ALBUM", codeSingle: "obs-CD04 / SINGLE", styleAlbum: "ELECTRONIC / ALBUM", styleVarious: "VARIOUS ELECTRONIC", styleSingle: "ELECTRONIC / SINGLE" },
     collaborators: { title: "Collaborators", description: "Artists who create, release, and build sound together with obscuRE TRAX.", aria: "Collaborating artists" },
     artists: { title: "Label Team", description: "The current team responsible for A&R, releases, mastering, arrangement, and visual direction." },
     roles: { director: "Director / Release Management / Arrangement / Mastering", deputy: "Co-Director / Visual Art / Arrangement", ar: "A&R / Arrangement", directorTag: "DIRECTOR", deputyTag: "CO-DIRECTOR", arTag: "A&R" },
@@ -145,8 +147,8 @@ const translations = {
       listen: "作品を聴く", submit: "オンライン投稿", founded: "設立", dizzylabSince: "DIZZYLAB 開設", identity: "活動形態", identityValue: "オンライン · 電子音楽", scroll: "下へスクロール", frame: "フレーム / 画一性を拒む / 2024",
     },
     manifesto: { aria: "レーベルマニフェスト", quote: "画一的に整えるのではなく、<br />不揃いの中に豊かな<span>響き</span>を探す。", note: "制限を拒み、混沌の襞から意味を掘り起こす。" },
-    releases: { title: "最新作品", description: "コンセプトアルバム Quiddity から続編やシングルまで、単一のスタイルに縛られない電子音楽を提示します。", previous: "前の作品", next: "次の作品", previousShort: "前へ", nextShort: "次へ", pagination: "作品ページ切り替え", beatarray: "Beatarray レーベルページ", slide: "作品 {number} に切り替える", cover: "{title} のジャケット", play: "再生 / 詳細", date: "リリース日", style: "スタイル" },
-    releaseData: { partA: "Quiddity シリーズ第2作 Part A。obscuRE TRAX がリリースする多様な電子音楽アルバム。", partB: "Quiddity シリーズ第2作 Part B。状態・性質・自由意志を音で探求します。", quiddity: "異なるスタイルの間に共通する響きを見いだす、レーベル初の多元的コンセプトアルバム。", transparentTape: "DLsr_DD1 が制作し、obscuRE TRAX から発表したシングル。", unpublished: "未公表", codeAlbum: "アルバム / obscuRE TRAX", codeQuiddity: "obs-CD03 / アルバム", codeSingle: "obs-CD04 / シングル", styleAlbum: "電子音楽 / アルバム", styleVarious: "多様な電子音楽", styleSingle: "電子音楽 / シングル" },
+    releases: { title: "最新作品", description: "コンセプトアルバム Quiddity から続編やシングルまで、単一のスタイルに縛られない電子音楽を提示します。", previous: "前の作品", next: "次の作品", previousShort: "前へ", nextShort: "次へ", pagination: "作品ページ切り替え", beatarray: "Beatarray レーベルページ", slide: "作品 {number} に切り替える", cover: "{title} のジャケット", play: "再生 / 詳細", listenNetease: "NetEase Music で聴く", date: "リリース日", style: "スタイル" },
+    releaseData: { partA: "Quiddity シリーズ第2作の A サイド。Trance、House、Dubstep、Artcore など、多彩な電子音楽を全11曲収録。obscuRE TRAX よりリリース、NetEase Music で配信中。", partB: "Quiddity シリーズ第2作の B サイド。Hardcore、Hardstyle、Frenchcore、Gabba などの全12曲を収録。obscuRE TRAX よりリリース、NetEase Music で配信中。", codePartA: "obs-CD06A / アルバム", codePartB: "obs-CD06B / アルバム", quiddity: "異なるスタイルの間に共通する響きを見いだす、レーベル初の多元的コンセプトアルバム。", transparentTape: "DLsr_DD1 が制作し、obscuRE TRAX から発表したシングル。", unpublished: "未公表", codeAlbum: "アルバム / obscuRE TRAX", codeQuiddity: "obs-CD03 / アルバム", codeSingle: "obs-CD04 / シングル", styleAlbum: "電子音楽 / アルバム", styleVarious: "多様な電子音楽", styleSingle: "電子音楽 / シングル" },
     collaborators: { title: "参加アーティスト", description: "obscuRE TRAX と共に制作・リリースし、サウンドを築くアーティストたち。", aria: "参加アーティスト一覧" },
     artists: { title: "レーベル運営", description: "審査、リリース、マスタリング、アレンジ、ビジュアルを担当する現在の運営チーム。" },
     roles: { director: "主宰 / リリース管理 / アレンジ / マスタリング", deputy: "副主宰 / アート / アレンジ", ar: "審査 / アレンジ", directorTag: "主宰", deputyTag: "副主宰", arTag: "審査" },
@@ -257,7 +259,7 @@ function renderRelease() {
         <span class="release-number">0${currentRelease + 1} / 0${siteData.releases.length}</span>
         <h3>${release.title}</h3>
         <p>${t(release.descriptionKey)}</p>
-        <a class="release-link" href="${release.url}" target="_blank" rel="noreferrer">${t("releases.play")} <span>↗</span></a>
+        <a class="release-link" href="${release.url}" target="_blank" rel="noreferrer">${t(release.linkKey || "releases.play")} <span>↗</span></a>
       </div>
       <div class="release-meta">
         <div><span>${t("releases.date")}</span>${release.dateKey ? t(release.dateKey) : release.date}</div>
